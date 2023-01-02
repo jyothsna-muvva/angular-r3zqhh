@@ -1,0 +1,27 @@
+p {
+  font-family: Lato;
+}
+
+.image {
+  width: 100px;
+}
+
+.search {
+  height: 20px;
+  margin: 0px 0px 0px 70px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+th {
+  padding: 0px 10px;
+}

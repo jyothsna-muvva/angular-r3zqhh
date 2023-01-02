@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="header">
+    <img
+      class="image"
+      src="https://www.logo.wine/a/logo/Capgemini/Capgemini-Logo.wine.svg"
+    />
+    <h1>Student Data</h1>
+    <input
+      class="search"
+      [(ngModel)]="searchField"
+      placeholder="Search"
+      autocomplete="off"
+      type="search"
+    />
+    <p (click)="clearSearchField()" *ngIf="searchField"></p>
+  </div>
+
+  <div class="inner-container">
+    <form #myForm="ngForm" (ngSubmit)="onClickSubmit(myForm.value)">
+      <input type="text" name="stdname" placeholder="Std name" ngModel />
+      <input type="number" name="stdno" placeholder="Std no" ngModel />
+      <input
+        type="tel"
+        name="phnnumber"
+        placeholder="phn number"
+        ngModel
+      /><br /><br />
+      
+      <input type="submit" value="submit" (click)="addToList()"/>
+    </form>
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Std Name</th>
+        <th>Std No</th>
+        <th>Phn Number</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let element of listArr; index as i">
+        <td>{{i+1}}</td>
+        <td>{{ data[0].stdname }}</td>
+        <td>{{ data[0].stdno }}</td>
+        <td>{{ data[0].phnnumber}}</td>
+        <td><button *ngIf="true"(click)="removeItem(i)">Remove</button></td>
+      </tr>
+    </table>
+    
+  </div>
+  
+</div>
